@@ -20,10 +20,10 @@ public class Producto {
     private String codigoBarras;
 
     @Column(name = "precio_venta")
-    private String precioVenta;
+    private Double precioVenta;
 
     @Column(name = "cantidad_stock")
-    private String cantidadStock;
+    private Integer cantidadStock;
 
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
@@ -63,19 +63,19 @@ public class Producto {
         this.codigoBarras = codigoBarras;
     }
 
-    public String getPrecioVenta() {
+    public Double getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(String precioVenta) {
+    public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
     }
 
-    public String getCantidadStock() {
+    public Integer getCantidadStock() {
         return cantidadStock;
     }
 
-    public void setCantidadStock(String cantidadStock) {
+    public void setCantidadStock(Integer cantidadStock) {
         this.cantidadStock = cantidadStock;
     }
 
@@ -87,4 +87,11 @@ public class Producto {
         this.estado = estado;
     }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 }
